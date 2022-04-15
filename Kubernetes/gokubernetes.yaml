@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gowebapi
-        image: lsramanjaneyulu/gowebapi:latest
+        image: localhost:8085/gowebapi
         ports:
         - containerPort: 8181
 ---
