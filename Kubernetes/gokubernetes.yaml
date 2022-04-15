@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gowebapi
+spec:
+  selector:
+    matchLabels:
+      app: gowebapi
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: gowebapi
+    spec:
+      containers:
+      - name: gowebapi
+        image: lsramanjaneyulu/gowebapi:latest
+        ports:
+        - containerPort: 8181
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gowebapi
+spec:
+  selector:
+    app: gowebapi
+  ports:
+    - protocol: TCP
+      port: 8181
