@@ -1,0 +1,10 @@
+rbac:
+  clusterReadOnlyRole: true
+  clusterAdminRole: false
+
+extraArgs:
+  - --system-banner="PSA Cluster"
+  - --namespace=default
+
+metricsScraper:
+  enabled: true
