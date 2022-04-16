@@ -27,7 +27,7 @@ func whoAmI(response http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(response).Encode(who)
 
-	fmt.Println("Endpoint Hit", who)
+	fmt.Println("Endpoint Hit: whoami")
 }
 
 func homePage(response http.ResponseWriter, r *http.Request) {
@@ -36,10 +36,8 @@ func homePage(response http.ResponseWriter, r *http.Request) {
 }
 
 func aboutMe(response http.ResponseWriter, r *http.Request) {
-	who := "RamLingala"
-
 	fmt.Fprintf(response, "Hello from Ram Lingala !!!!")
-	fmt.Println("Endpoint Hit: ", who)
+	fmt.Println("Endpoint Hit: aboutMe")
 }
 
 func request1() {
