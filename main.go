@@ -17,7 +17,7 @@ func main() {
 	request1()
 }
 
-func whoAmI(response http.ResponseWriter, r *http.Request) {
+func WhoAmI(response http.ResponseWriter, r *http.Request) {
 	who := []whoami{
 		whoami{Name: "Ram Lingala",
 			Title: "DevOps Engineer",
@@ -30,20 +30,20 @@ func whoAmI(response http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: whoami")
 }
 
-func homePage(response http.ResponseWriter, r *http.Request) {
+func HomePage(response http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(response, "Welcome to Publicis Assessment!!!")
 	fmt.Println("Endpoint Hit: homePage")
 }
 
-func aboutMe(response http.ResponseWriter, r *http.Request) {
+func AboutMe(response http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(response, "Hello from Ram Lingala !!!!")
 	fmt.Println("Endpoint Hit: aboutMe")
 }
 
 func request1() {
-	http.HandleFunc("/", homePage)
-	http.HandleFunc("/aboutme", aboutMe)
-	http.HandleFunc("/whoami", whoAmI)
+	http.HandleFunc("/homepage", HomePage)
+	http.HandleFunc("/aboutme", AboutMe)
+	http.HandleFunc("/whoami", WhoAmI)
 
 	log.Fatal(http.ListenAndServe(":8181", nil))
 }
